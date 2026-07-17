@@ -1,13 +1,14 @@
 import ContactForm from "@/components/ContactForm";
+import Icon from "@/components/Icon";
 import { site } from "@/lib/site";
 
 const practices = [
-  { ic: "🏢", t: "Hukum Korporasi", d: "Pendirian badan usaha, merger & akuisisi, perjanjian komersial, dan corporate action." },
-  { ic: "🏛️", t: "Litigasi & Sengketa", d: "Pendampingan perkara perdata, pidana, dan tata usaha negara di semua tingkat peradilan." },
-  { ic: "📑", t: "Legal Compliance", d: "Audit kepatuhan, perizinan usaha, dan penyesuaian regulasi ketenagakerjaan." },
-  { ic: "🤝", t: "Alternatif Penyelesaian", d: "Negosiasi, mediasi, dan arbitrase untuk penyelesaian sengketa yang efisien." },
-  { ic: "🏠", t: "Properti & Pertanahan", d: "Due diligence, sengketa lahan, dan pendampingan transaksi properti." },
-  { ic: "👨‍👩‍👧", t: "Hukum Keluarga", d: "Perjanjian pranikah, waris, dan pendampingan perceraian secara profesional." },
+  { ic: "building", t: "Hukum Korporasi", d: "Pendirian badan usaha, merger & akuisisi, perjanjian komersial, dan corporate action." },
+  { ic: "court", t: "Litigasi & Sengketa", d: "Pendampingan perkara perdata, pidana, dan tata usaha negara di semua tingkat peradilan." },
+  { ic: "document", t: "Legal Compliance", d: "Audit kepatuhan, perizinan usaha, dan penyesuaian regulasi ketenagakerjaan." },
+  { ic: "handshake", t: "Alternatif Penyelesaian", d: "Negosiasi, mediasi, dan arbitrase untuk penyelesaian sengketa yang efisien." },
+  { ic: "home", t: "Properti & Pertanahan", d: "Due diligence, sengketa lahan, dan pendampingan transaksi properti." },
+  { ic: "users", t: "Hukum Keluarga", d: "Perjanjian pranikah, waris, dan pendampingan perceraian secara profesional." },
 ];
 
 const stats = [
@@ -24,10 +25,10 @@ const team = [
 ];
 
 const gallery = [
-  { emoji: "⚖️", bg: "from-[#13273f] to-[#0d1b2e]" },
-  { emoji: "📚", bg: "from-[#a8862c] to-[#5e4a15]" },
-  { emoji: "🏛️", bg: "from-[#1d3a5f] to-[#13273f]" },
-  { emoji: "🖋️", bg: "from-[#2c466b] to-[#0d1b2e]" },
+  "/img/gallery-1.jpg",
+  "/img/gallery-2.jpg",
+  "/img/gallery-3.jpg",
+  "/img/gallery-4.jpg",
 ];
 
 const testimonials = [
@@ -54,7 +55,7 @@ export default function Home() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-[#0d1b2e] to-[#13273f] py-28 text-white">
         <div className="mx-auto max-w-4xl px-5 text-center">
-          <div className="tracking-[8px] text-accent">— ⚖️ —</div>
+          <div className="tracking-[8px] text-accent">— ✦ —</div>
           <h1 className="mx-auto mt-5 max-w-3xl text-4xl font-bold leading-tight text-white md:text-6xl">
             Mitra Hukum yang Berdiri di Sisi Anda
           </h1>
@@ -93,7 +94,9 @@ export default function Home() {
           <div className="mt-12 grid gap-6 text-left sm:grid-cols-2 lg:grid-cols-3">
             {practices.map((p) => (
               <div key={p.t} className="border-t-2 border-accent bg-surface p-7 transition-shadow hover:shadow-lg">
-                <div className="text-3xl">{p.ic}</div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                  <Icon name={p.ic} className="h-6 w-6" />
+                </div>
                 <h3 className="mt-4 font-heading text-lg font-bold">{p.t}</h3>
                 <p className="mt-2 text-sm text-muted">{p.d}</p>
               </div>
@@ -120,10 +123,8 @@ export default function Home() {
             <p className="mt-2 text-sm text-muted">— Dr. Gede Adhikara, Managing Partner</p>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            {gallery.map((g, i) => (
-              <div key={i} className={`flex aspect-square items-center justify-center rounded-xl bg-gradient-to-br text-5xl ${g.bg}`}>
-                {g.emoji}
-              </div>
+            {gallery.map((src, i) => (
+              <img key={i} src={src} alt={`Adhikara Law ${i + 1}`} loading="lazy" className="aspect-square w-full rounded-xl object-cover" />
             ))}
           </div>
         </div>
