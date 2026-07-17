@@ -1,7 +1,7 @@
 export const site = {
   name: "Adhikara Law",
   logo: "⚖️",
-  whatsapp: "6281234567890", // TODO: ganti nomor asli
+  whatsapp: "6287830377139", // TODO: ganti nomor asli
   waGreeting: "Halo Adhikara Law, saya ingin konsultasi hukum.",
   address: "Menara Adhikara Lt. 12, Jl. Sudirman Kav. 50, Jakarta Pusat",
   hours: "Senin–Jumat, 09.00 – 18.00 WIB",
@@ -36,7 +36,7 @@ export const footer = {
     {
       title: "Hubungi",
       links: [
-        { href: "https://wa.me/6281234567890", label: "WhatsApp" },
+        { href: "https://wa.me/6287830377139", label: "WhatsApp" },
         { href: "#", label: "Email" },
         { href: "#", label: "LinkedIn" },
       ],
